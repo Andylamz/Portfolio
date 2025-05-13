@@ -558,3 +558,12 @@ footer ul li a {
     line-height: 30px;
   }
 }
+/* 440 */
+@media (max-width: 440px) {
+  .input-box input,
+  .input-box textarea {
+    padding: 1.5rem;
+    width: 300px;
+    font-size: 1rem;
+  }
+}
