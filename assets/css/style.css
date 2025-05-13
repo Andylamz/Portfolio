@@ -12,9 +12,10 @@
   color: white;
 } */
 .dark {
-  background-color: black;
-  color: white;
+  background-color: hsla(0, 0%, 3%, 0.951);
+  color: hsl(0, 0%, 100%);
 }
+/** ---------------------------------- header ---------------------------------------- */
 header {
   position: fixed;
   top: 1rem;
@@ -24,16 +25,16 @@ header {
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: hsla(0, 0%, 0%, 0.573);
   backdrop-filter: blur(8px);
-  color: white;
+  color: hsl(0, 0%, 100%);
   padding: 0.5rem 1.5rem;
   border-radius: 3rem;
   z-index: 999;
 }
 
 .logo {
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-size: 1.3rem;
   font-weight: 600;
   text-wrap: nowrap;
@@ -48,7 +49,7 @@ header {
 }
 li a {
   position: relative;
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-weight: 300;
 }
 li a::before {
@@ -61,29 +62,52 @@ li a::before {
   border-radius: 1rem;
   transition: 0.3s ease-in-out;
   /* background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255)); */
-  background: white;
+  background: hsl(0, 0%, 100%);
 }
 li a:hover::before {
   width: 100%;
 }
 .visit-btn {
+  position: relative;
   padding: 0.8rem 1.5rem;
   border-radius: 3rem;
   border: none;
   font-weight: 500;
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.8);
+  color: hsla(0, 0%, 0%, 0.8);
   cursor: pointer;
   text-wrap: nowrap;
   /* background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255)); */
-  background: white;
-
+  background: hsl(0, 0%, 100%);
   transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+.go,
+.visit {
+  display: inline-block;
+  transition: 0.3s;
+}
+.go {
+  position: absolute;
+  top: 0;
+  border-radius: 3rem;
+  right: -127px;
+  line-height: 42px;
+  background-color: hsl(21, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  height: 100%;
 }
 .visit-btn:hover {
   /* background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255)); */
-  background: white;
+  background: hsl(0, 0%, 100%);
   transform: scale(1.03);
+}
+.visit-btn:hover .visit {
+  transform: translateX(-127px);
+}
+.visit-btn:hover .go {
+  transform: translateX(-127px);
 }
 #menu-icon {
   font-size: 2rem;
@@ -99,7 +123,8 @@ section {
   /* filter: invert(1); */
 }
 .section-title {
-  color: #2ecc71;
+  /* color: hsl(145, 63%, 49%); */
+  color: hsl(21, 91%, 48%);
   text-align: center;
   font-size: 4rem;
   font-weight: 600;
@@ -108,7 +133,7 @@ section {
   background-clip: text; */
 }
 
-/*                      about section                    */
+/**         -------------------------- about section -------------------------      */
 
 .about {
   display: flex;
@@ -141,24 +166,58 @@ section {
   font-size: 4rem;
   font-weight: 600;
 }
-.info-box span {
-  background: linear-gradient(to right, rgb(251, 153, 153), rgb(156, 184, 245));
+.info-box .job-title {
+  /* background: linear-gradient(to right, hsl(0, 92%, 79%), hsl(221, 82%, 79%)); */
+
+  background: linear-gradient(to right, hsl(21, 96%, 49%), hsl(21, 79%, 70%));
+
   background-clip: text;
   color: transparent;
   font-size: 2rem;
 }
+.social-box {
+  display: flex;
+  gap: 3rem;
+}
+.social-box i {
+  color: hsl(21, 96%, 49%);
+}
+.info-box .social-box span {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid hsl(21, 96%, 49%);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.social-box span:hover {
+  transform: scale(1.2);
+  border: none;
+  background-color: hsl(21, 96%, 49%);
+  box-shadow: 0 3px 20px hsla(21, 91%, 48%, 0.507);
+}
+.social-box span:hover i {
+  color: hsl(0, 0%, 100%);
+}
+.social-box a {
+  display: block;
+  padding: 10px 15px;
+  z-index: -1;
+}
 .btn {
   border-radius: 3rem;
   padding: 0.5rem 1.5rem;
-  border: 2px solid black;
+  border: 2px solid hsl(21, 91%, 48%);
+  background-color: hsl(21, 91%, 48%);
+  color: hsl(0, 0%, 100%);
   cursor: pointer;
   font-weight: 500;
   text-wrap: nowrap;
+  box-shadow: 0 6px 20px hsla(21, 91%, 48%, 0.507);
   transition: 0.2s ease-in-out;
 }
 .btn:hover {
-  background-color: black;
-  color: white;
+  transform: scale(1.1);
 }
 
 /*                      skills section                    */
@@ -170,7 +229,7 @@ section {
   gap: 5rem;
 }
 .skills-info img {
-  border: 1px solid #7b7b7b;
+  border: 1px solid hsl(21, 96%, 49%);
   width: 24vw;
   border-radius: 3rem;
 }
@@ -180,8 +239,8 @@ section {
   gap: 2rem;
 }
 .grids-card {
-  border: 4px solid #7b7b7b;
-  color: #fff;
+  border: 4px solid hsl(21, 96%, 49%);
+  color: hsl(0, 0%, 100%);
   border-radius: 3rem;
   padding: 3rem;
   gap: 1.5rem;
@@ -195,17 +254,17 @@ section {
 
 .grids-card:hover {
   transform: scale(1.05);
-  background-color: rgba(0, 0, 0, 0.806);
-  color: #fff;
+  background-color: hsla(0, 0%, 0%, 0.806);
+  color: hsl(0, 0%, 100%);
   border-color: transparent;
 }
 .grids-card:hover h3 {
   color: transparent;
-  background: linear-gradient(to right, rgb(98, 238, 205), rgb(231, 38, 38));
+  background: linear-gradient(to right, hsl(166, 80%, 66%), hsl(0, 80%, 53%));
   background-clip: text;
 }
 .grids-card h3 {
-  color: #7b7b7b;
+  color: hsl(0, 0%, 48%);
   font-size: 1.8rem;
   /* font-weight: 400; */
 }
@@ -221,7 +280,8 @@ section {
 }
 .skillset span {
   padding: 10px 15px;
-  background-color: #2ecc71;
+  /* background-color: hsl(145, 63%, 49%); */
+  background-color: hsl(21, 91%, 48%);
   border-radius: 3rem;
 }
 
@@ -256,7 +316,7 @@ section {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 20px;
-  box-shadow: 0 30px 50px #505050;
+  box-shadow: 0 30px 50px hsl(0, 0%, 31%);
   transition: 0.5s;
   /* margin: 0 2rem; */
 }
@@ -294,7 +354,7 @@ section {
   top: 50%;
   transform: translateY(-50%);
   font-family: system-ui;
-  color: #eee;
+  color: hsl(0, 0%, 93%);
   display: none;
   /* background-color: pink; */
 }
@@ -346,17 +406,17 @@ section {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  color: gray;
-  background-color: #fff;
+  color: hsl(0, 0%, 50%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
   font-weight: bold;
-  border: 1px solid #555;
+  border: 1px solid hsl(0, 0%, 33%);
   margin: 0 15px;
   transition: 0.5s;
 }
 .project_button:hover {
   cursor: pointer;
-  background-color: #ccc;
+  background-color: hsl(0, 0%, 80%);
 }
 
 /*                      Contact section                    */
@@ -376,7 +436,7 @@ section {
 .input-box input,
 .input-box textarea {
   border-radius: 1rem;
-  border: 2px solid rgb(131, 131, 131);
+  border: 2px solid hsl(0, 0%, 51%);
   padding: 1.5rem;
   width: 400px;
   font-size: 1.1rem;
@@ -384,7 +444,7 @@ section {
 
 .input-box p {
   margin: 5px;
-  color: red;
+  color: #ff0000;
 }
 #message {
   min-height: 300px;
@@ -395,16 +455,18 @@ section {
 .btn-submit {
   border: none;
   padding: 10px 20px;
+  background-color: hsl(21, 91%, 48%);
+  color: hsl(0, 0%, 100%);
   border-radius: 5vmin;
   transition: 0.3s;
   cursor: pointer;
 }
 .btn-submit:hover {
-  background: black;
-  color: white;
+  background: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
 }
 
-/* footer */
+/** ------------------------ footer ---------------------------- */
 footer {
   bottom: 0;
   left: 0;
@@ -423,7 +485,7 @@ footer ul {
   gap: 3rem;
 }
 footer ul li a {
-  color: black;
+  color: hsl(21, 91%, 48%);
   font-weight: 600;
 }
 .copyright {
@@ -512,11 +574,11 @@ footer ul li a {
     margin: 1rem;
     width: 100%;
     padding: 1rem;
-    color: white;
+    color: hsl(0, 0%, 100%);
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: hsla(0, 0%, 0%, 0.9);
     display: none;
   }
   .nav-links li {
@@ -538,7 +600,7 @@ footer ul li a {
   }
   /* test */
   .project .content {
-    left: 10px;
+    left: 25px;
   }
   .project .project-title {
     font-size: 1.2rem;
