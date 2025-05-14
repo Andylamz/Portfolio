@@ -3,6 +3,7 @@
 const prev_button = document.querySelectorAll(".project_button")[0];
 const next_button = document.querySelectorAll(".project_button")[1];
 const switch_button = document.querySelector(".switch_button");
+const effect_buttons = document.querySelectorAll(".content button");
 // sections select
 const sections = document.querySelectorAll("section");
 // header + footer nav
