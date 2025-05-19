@@ -21,6 +21,7 @@ This is my personal portfolio site built using HTML, CSS and Javascript.
 - Section snapping with scroll animation
 - Dark mode toggle switch (with icon change)
 - Contact form with validation and email submission (Formspree)
+- DOM elements are created dynamically using both 'innerHTML'(template literal) and 'appendChild'(node-bsaed injection) depending on context
 
 ## Future Updates
 

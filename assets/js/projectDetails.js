@@ -2,7 +2,7 @@ const projects = [
   {
     title: "To-do List",
     category: "Frontend",
-    tags: ["CSS", "HTML", "JavaScript", "localStorage", "Netlify"],
+    tags: ["CSS", "HTML", "JavaScript", "localStorage", "Netlify", "OOP"],
     src: "./assets/images/projectScreenshots/todoApp.png",
     demo: "https://zesty-cat-660d95.netlify.app/",
     github: "https://github.com/Andylamz/TodoList",
