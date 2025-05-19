@@ -1,3 +1,5 @@
+import projects from "./projectDetails.js";
+
 /** ------------------------- select ------------------------------- */
 // buttons select
 const prev_button = document.querySelectorAll(".project_button")[0];
@@ -12,9 +14,8 @@ const footerNav = document.querySelector(".footer-nav");
 // menu button for mobile
 const menuIcon = document.getElementById("menu-icon");
 
-// scrolling related variables
-let sectionIndex = 0;
-let isScrolling = false;
+// projects slide
+const projectsContainer = document.querySelector(".projects-container");
 
 // form element select
 const contact_form = document.getElementById("contact-form");
@@ -23,6 +24,31 @@ const message_input = document.getElementById("message");
 const message_err = document.querySelector(".message-err");
 const email_err = document.querySelector(".email-err");
 const submit_button = document.querySelector(".btn-submit");
+
+// scrolling related variables
+let sectionIndex = 0;
+let isScrolling = false;
+
+// projects html
+projectsContainer.innerHTML = projects
+  .map(
+    (project) => `
+<div class="project" style="background-image: url(${project.src});">
+    <div class="content">
+        <div class="project-title">${project.title}</div>
+        <div class="project-description">
+            <div class="project-category">${project.category}</div>
+            <div class="tags">
+              ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
+        </div>
+        <button><a href="${project.demo}" target="_blank">Demo</a></button>
+        <button><a href="${project.github}" target="_blank">Github</a></button>
+    </div>
+</div>
+  `
+  )
+  .join("");
 
 /*  ---------------------------- eventHandle ------------------------ */
 // event handler for buttons
@@ -37,41 +63,6 @@ prev_button.addEventListener("click", () => {
     .querySelector(".projects-container")
     .prepend(lists[lists.length - 1]);
 });
-
-// dark mode
-switch_button.addEventListener("click", function () {
-  const all_Sections = document.querySelectorAll("section");
-  // toggle section's backfround
-  all_Sections.forEach((section) => {
-    section.classList.toggle("dark");
-  });
-
-  // toggle icon
-  this.classList.toggle("fa-moon");
-  this.classList.toggle("fa-sun");
-});
-
-// handle scrolling
-window.addEventListener("wheel", (e) => {
-  // use to debouncing
-  if (isScrolling) return;
-
-  if (e.deltaY > 0 && sectionIndex < sections.length - 1) {
-    sectionIndex++;
-  } else if (e.deltaY < 0 && sectionIndex > 0) {
-    sectionIndex--;
-  }
-  console.log(sectionIndex);
-
-  isScrolling = true;
-  sections[sectionIndex].scrollIntoView({ behavior: "smooth" });
-  setTimeout(() => {
-    isScrolling = false;
-  }, 500);
-});
-
-// optimising scrolling
-// using event delegation to reduce event listener (performance optimisation)
 
 // header nav
 headerNav.addEventListener("click", (e) => {
@@ -133,4 +124,39 @@ contact_form.addEventListener("submit", (e) => {
     message_err.innerText = email_err.innerText = "";
     message_input.value = email_input.value = "";
   }
+});
+
+// handle scrolling
+// optimising scrolling
+// using event delegation to reduce event listener (performance optimisation)
+
+window.addEventListener("wheel", (e) => {
+  // use to debouncing
+  if (isScrolling) return;
+
+  if (e.deltaY > 0 && sectionIndex < sections.length - 1) {
+    sectionIndex++;
+  } else if (e.deltaY < 0 && sectionIndex > 0) {
+    sectionIndex--;
+  }
+  console.log(sectionIndex);
+
+  isScrolling = true;
+  sections[sectionIndex].scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => {
+    isScrolling = false;
+  }, 500);
+});
+
+// dark mode
+switch_button.addEventListener("click", function () {
+  const all_Sections = document.querySelectorAll("section");
+  // toggle section's backfround
+  all_Sections.forEach((section) => {
+    section.classList.toggle("dark");
+  });
+
+  // toggle icon
+  this.classList.toggle("fa-moon");
+  this.classList.toggle("fa-sun");
 });

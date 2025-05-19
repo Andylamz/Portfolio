@@ -1,16 +1,33 @@
-const project = [
+const projects = [
   {
     title: "To-do List",
     category: "Frontend",
-    tags: ["CSS", "HTML", "JavaScript", "localStorage"],
+    tags: ["CSS", "HTML", "JavaScript", "localStorage", "Netlify"],
     src: "./assets/images/projectScreenshots/todoApp.png",
     demo: "https://zesty-cat-660d95.netlify.app/",
     github: "https://github.com/Andylamz/TodoList",
   },
   {
+    title: "Movie Finder",
+    category: "Frontend",
+    tags: [
+      "CSS",
+      "CSS Modules",
+      "HTML",
+      "React",
+      "Fetching API",
+      "Netlify",
+      "Vite",
+      "Hooks",
+    ],
+    src: "./assets/images/projectScreenshots/movieFinder.png",
+    demo: "https://incandescent-phoenix-1b2fa2.netlify.app/",
+    github: "https://github.com/Andylamz/movie-finder",
+  },
+  {
     title: "Skill Roller",
     category: "Frontend",
-    tags: ["CSS", "HTML", "JavaScript"],
+    tags: ["CSS", "HTML", "JavaScript", "Netlify"],
     src: "./assets/images/projectScreenshots/skillRoller.png",
     demo: "https://enchanting-sunflower-8eb77c.netlify.app/",
     github: "https://github.com/Andylamz/SkillRoller",
@@ -25,9 +42,20 @@ const project = [
       "Fetch API",
       "Weather API",
       "Geolocation",
+      "Netlify",
     ],
     src: "./assets/images/projectScreenshots/weatherApp.png",
     demo: "https://thriving-vacherin-5d2d92.netlify.app/",
     github: "https://github.com/Andylamz/Weather-App",
   },
+  {
+    title: "Portfolio (This!)",
+    category: "Frontend",
+    tags: ["CSS", "HTML", "JavaScript", "Netlify"],
+    src: "./assets/images/projectScreenshots/portfolio.png",
+    demo: "https://andyytlportfolio.netlify.app/",
+    github: "https://github.com/Andylamz/Portfolio",
+  },
 ];
+
+export default projects;

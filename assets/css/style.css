@@ -429,7 +429,6 @@ section {
   margin-left: 3px;
 }
 .project button {
-  padding: 10px 20px;
   border: none;
   background-color: hsl(0, 0%, 100%);
   color: hsl(21, 91%, 48%);
@@ -451,6 +450,12 @@ section {
     transform: translateY(0);
     filter: blur(0);
   }
+}
+.project button a {
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .tags {
   margin-top: 0.5rem;
@@ -682,7 +687,8 @@ footer ul li a {
   }
   /* test */
   .project .content {
-    top: 65%;
+    top: 55%;
+    bottom: 10%;
     left: 25px;
     width: 13.7rem;
   }
