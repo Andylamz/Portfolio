@@ -16,6 +16,7 @@ const menuIcon = document.getElementById("menu-icon");
 
 // projects slide
 const projectsContainer = document.querySelector(".projects-container");
+const projectSection = document.querySelector(".projects-bg");
 
 // form element select
 const contact_form = document.getElementById("contact-form");
@@ -55,6 +56,7 @@ projectsContainer.innerHTML = projects
 next_button.addEventListener("click", () => {
   const lists = document.querySelectorAll(".project");
   document.querySelector(".projects-container").appendChild(lists[0]);
+  projectSection.style.backgroundImage = `${lists[2].style.backgroundImage}`;
 });
 
 prev_button.addEventListener("click", () => {
@@ -62,6 +64,7 @@ prev_button.addEventListener("click", () => {
   document
     .querySelector(".projects-container")
     .prepend(lists[lists.length - 1]);
+  projectSection.style.background = `${lists[0].style.backgroundImage}`;
 });
 
 // header nav
@@ -126,28 +129,6 @@ contact_form.addEventListener("submit", (e) => {
   }
 });
 
-// handle scrolling
-// optimising scrolling
-// using event delegation to reduce event listener (performance optimisation)
-
-window.addEventListener("wheel", (e) => {
-  // use to debouncing
-  if (isScrolling) return;
-
-  if (e.deltaY > 0 && sectionIndex < sections.length - 1) {
-    sectionIndex++;
-  } else if (e.deltaY < 0 && sectionIndex > 0) {
-    sectionIndex--;
-  }
-  console.log(sectionIndex);
-
-  isScrolling = true;
-  sections[sectionIndex].scrollIntoView({ behavior: "smooth" });
-  setTimeout(() => {
-    isScrolling = false;
-  }, 500);
-});
-
 // dark mode
 switch_button.addEventListener("click", function () {
   const all_Sections = document.querySelectorAll("section");
@@ -160,3 +141,5 @@ switch_button.addEventListener("click", function () {
   this.classList.toggle("fa-moon");
   this.classList.toggle("fa-sun");
 });
+
+// changing background

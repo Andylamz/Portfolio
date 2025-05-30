@@ -9,16 +9,9 @@ This is my personal portfolio site built using HTML, CSS and Javascript.
 - Javascript (Vanilla)
 - Netify (hosting)
 
-## Performance Optimisation
-
-- Debouncing is applied to the portfolio to prevent excessive scrolling
-- Event delegation is used to minimise the number of event listeners
-
 ## Features
 
 - Responsive design for desktop and mobile
-- Smooth scroll navigation
-- Section snapping with scroll animation
 - Dark mode toggle switch (with icon change)
 - Contact form with validation and email submission (Formspree)
 - DOM elements are created dynamically using both 'innerHTML'(template literal) and 'appendChild'(node-bsaed injection) depending on context
